@@ -3,15 +3,17 @@ unit ZLIBArchive;
 //***********************************************
 // ZLBArchive Control.  Ver. 1.52
 //
-// Requires the ZLIB Compression routines found  
+// Requires the ZLIB Compression routines found
 // on the Delphi CD.
+//
+// Modified by Sistem-Pack 02.10.2019 https://github.com/Sistem-Pack/Zlib
 //***********************************************
 
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ZLib, FileCtrl;
+  ZLib{, FileCtrl}; // fileCtrl procedures or functions is depricated, used SysUtils
 
 type
   TFileStatus = (fsCompressed, fsStored);
@@ -33,8 +35,8 @@ type
   EFileNotFoundInArchive = Exception;
 
   TZLBFileRec = record
-                  name : shortstring;
-                  path : shortstring;
+                  name : string;
+                  path : string;
                   osize : longint;
                   csize : longint;
                   start : longint;

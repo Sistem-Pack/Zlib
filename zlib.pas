@@ -238,8 +238,6 @@ procedure _tr_align; external;
 procedure _tr_stored_block; external;
 {$IFDEF BD5}
   function adler32; external;
-{$ELSE}
-  procedure adler32; external;
 {$ENDIF}
 procedure inflate_blocks_new; external;
 procedure inflate_blocks; external;
